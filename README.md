@@ -1,2 +1,2 @@
 # EcommerceSite
-from a tutorial
+first big React project
