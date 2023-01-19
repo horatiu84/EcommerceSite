@@ -1,4 +1,7 @@
 import { useState } from "react";
+import FormInput from "../form-input/form-input";
+import "./sign-up-form.styles.scss";
+import Button from "../button/button.component";
 
 import {
   createAuthUserWithEmailAndPassword,
@@ -50,11 +53,13 @@ const SignUpForm = () => {
   };
 
   return (
-    <div>
-      <h1>Sign up with your email and password</h1>
+    <div className="sign-up-container">
+      <h2>Don't have an account?</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
-        <label>Display Name:</label>
-        <input
+        <label></label>
+        <FormInput
+          label="Display Name:"
           type="text"
           name="displayName"
           value={displayName}
@@ -62,8 +67,8 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <label>Email:</label>
-        <input
+        <FormInput
+          label="Email"
           type="email"
           name="email"
           value={email}
@@ -71,8 +76,8 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <label>Password:</label>
-        <input
+        <FormInput
+          label="Password"
           type="password"
           name="password"
           value={password}
@@ -80,8 +85,8 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <label>Confirm password:</label>
-        <input
+        <FormInput
+          label="Confirm password:"
           type="password"
           name="confirmPassword"
           value={confirmPassword}
@@ -89,7 +94,7 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
     </div>
   );
